@@ -34,6 +34,8 @@ def fetch_todo() -> dict:
 """
 
 
+
+
 def update_task_entry(task_id: int , text: str):
     cursor = postgres.cursor()
     query = "Update tasks set task = '{}' where id = {};".format(text,task_id)
