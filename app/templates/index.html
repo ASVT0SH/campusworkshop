@@ -14,12 +14,14 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/custom.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css">
+
 
 </head>
 
 <body>
     <main role="main" class="container extra-bottom">
-        <h1 class="mt-5 text-center text-primary">Betsol To Do </h1>
+        <h1 class="mt-5 text-center text-primary">Betsol To-Do </h1>
         <p class="text-muted">BETSOL To-Do makes it easier for you to plan your work by using online to-do list App.</p>
     </main>
     <div class="container">
@@ -90,7 +92,8 @@
                     <th class="task">Task Name</th>
                     <th class="status">Status</th>
                     <th class="update">Edit</th>
-                    <th class="update">Remove</th>
+                    <th class="update">Delete</th>
+
                 </tr>
             </thead>
 
@@ -111,17 +114,13 @@
                     <td><button type="button" class="btn btn-outline-danger btn-sm state" disabled
                             data-source="{{item.id}}">{{item.status}}</button></td>
                     {%endif%}
-
-                    <td><button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal"
-                            data-bs-target="#edit-task-modal" data-source="{{item.id}}" data-content="{{item.task}}"><i
-                                class="fa fa-pen fa-1" aria-hidden="true"></i></button></td>
-
-                    <td><button class="btn btn-outline-secondary btn-sm remove" data-source="{{item.id}}"
-                            type="button">Delete</button></td>
+                    <td><button type="button" class="btn btn-outline-danger btn-sm delete" data-source="{{item.id}}">
+                        <i class="fas fa-trash-alt"></i>
+                    </button></td>
                 </tr>
                 {% endfor %}
-
             </tbody>
+            
         </table>
     </div>
 
